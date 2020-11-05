@@ -4,14 +4,10 @@ export class App{
     constructor(sceneInstance){
       this._update = this._update.bind(this);
       this._onResize = this._onResize.bind(this);
-      // this._keyEvent = this._keyEvent.bind(this);
-
-      this.frame = 0;
-      this.sceneNUM = 0;
 
       // シーン
       this._scene = sceneInstance;
-  
+
       //レンダラー
       this._renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true});
       this._renderer.setClearColor(new THREE.Color(0xffffff), 1.0);
@@ -30,12 +26,6 @@ export class App{
       this._update();
 
     }
-
-    // _keyEvent(event){
-    //   if (event.key === 'a') {
-    //     this._scene.scene2.scene = 1;//_keyEventをbindしないと_sceneの中身を参照できない！
-    //     this._scene.camera = this._scene._persCamera
-    //   }
 
 
     _update() {
